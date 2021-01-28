@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using Mirror;
 
 namespace Invector.vCharacterController
 {

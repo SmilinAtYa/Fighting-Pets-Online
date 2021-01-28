@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using Mirror;
 
 namespace Invector.vCharacterController
 {
     [vClassHeader("THIRD PERSON CONTROLLER", iconName = "controllerIcon")]
-    public class vThirdPersonController : vThirdPersonAnimator, NetworkBehaviour
+    public class vThirdPersonController : vThirdPersonAnimator
     {
         /// <summary>
         /// Move the controller to a specific Position
@@ -12,15 +11,14 @@ namespace Invector.vCharacterController
         /// <param name="targetPosition"></param>
         public virtual void MoveToPosition(Vector3 targetPosition)
         {
-            if (isLocalPlayer)
-            {
+
             Vector3 dir = targetPosition - transform.position;
             dir.y = 0;
             //moveDirection = dir.normalized;
             input = transform.InverseTransformDirection(dir.normalized);
             // calculate input smooth
             inputSmooth = Vector3.Lerp(inputSmooth, input, (isStrafing ? strafeSpeed.movementSmooth : freeSpeed.movementSmooth) * Time.deltaTime);
-            }
+            
         }
 
         /// <summary>

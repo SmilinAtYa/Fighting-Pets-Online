@@ -1,5 +1,4 @@
-﻿using Mirror;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Invector.vCharacterController.vActions
 {
@@ -40,7 +39,7 @@ namespace Invector.vCharacterController.vActions
         bool doingAction { get; }
 
     }
-    public abstract class vActionListener : vMonoBehaviour, IActionListener, NetworkBehaviour
+    public abstract class vActionListener : vMonoBehaviour, IActionListener
     {
         [HideInInspector]
         public bool actionEnter;
